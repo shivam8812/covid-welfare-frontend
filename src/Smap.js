@@ -18,7 +18,7 @@ export class Smap extends Component{
         this.showMyLocation();
   }
   async showMyLocation(){
-    axios.get(`http://127.0.0.1:8000/api/${localStorage.getItem('username')}/`,{
+    axios.get(`/api/${localStorage.getItem('username')}/`,{
       headers: {
           'Authorization': `Token ${localStorage.getItem('token')}`
       }
@@ -38,7 +38,7 @@ export class Smap extends Component{
   }
   async showProviders(){
     console.log("showProviders");
-    axios.get(`http://127.0.0.1:8000/api/${localStorage.getItem('username')}/seeklist`,{
+    axios.get(`/api/${localStorage.getItem('username')}/seeklist`,{
             headers: {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             }
@@ -60,7 +60,7 @@ export class Smap extends Component{
     this.setState({
       dist:dist,
     })
-    axios.get(`http://127.0.0.1:8000/api/${username}/`,{
+    axios.get(`/api/${username}/`,{
             headers: {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             }
@@ -87,7 +87,7 @@ export class Smap extends Component{
   }
 
   handleRequestButton = ()=>{
-    axios.post(`http://127.0.0.1:8000/notification/seekreq/`,
+    axios.post(`/notification/seekreq/`,
             {
               user: this.state.userClicked.username,
             },
@@ -123,7 +123,7 @@ export class Smap extends Component{
             <p className="attribute-para-map"><span className="profile-atrribute-map">Occupation:  </span><br/>{this.state.userClicked.occupation}</p>
             <p className="attribute-para-map"><span className="profile-atrribute-map">Distance form you:  </span><br/>{this.state.dist} Kms</p>
             <button onClick={this.handleRequestButton}>Request</button><br />
-            <button onClick={this.handleCloseButton}>Close</button>
+            <button className="closebutton" onClick={this.handleCloseButton}>Close</button>
           </div>
         </h1>
         <Map google={this.props.google}

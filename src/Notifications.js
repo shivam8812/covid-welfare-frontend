@@ -28,7 +28,7 @@ class Notifications extends Component {
         this.getothersReqs();
     }
     getProvideReqs(){
-        axios.get(`http://127.0.0.1:8000/notification/providereq/`,
+        axios.get(`/notification/providereq/`,
                 {
                   headers: {
                     'Authorization': `Token ${localStorage.getItem('token')}`
@@ -47,7 +47,7 @@ class Notifications extends Component {
         )
     }
     getSeekReqs(){
-        axios.get(`http://127.0.0.1:8000/notification/seekreq/`,
+        axios.get(`/notification/seekreq/`,
                 {
                   headers: {
                     'Authorization': `Token ${localStorage.getItem('token')}`
@@ -66,7 +66,7 @@ class Notifications extends Component {
         )
     }
     getothersReqs(){
-        axios.get(`http://127.0.0.1:8000/notification/`,
+        axios.get(`/notification/`,
                 {
                   headers: {
                     'Authorization': `Token ${localStorage.getItem('token')}`
@@ -85,7 +85,7 @@ class Notifications extends Component {
         )
     }
     showDetails(username){
-        axios.get(`http://127.0.0.1:8000/api/${username}`,{
+        axios.get(`/api/${username}`,{
             headers: {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             }
@@ -99,7 +99,7 @@ class Notifications extends Component {
         .catch(error => {
             console.log(error);
         })
-        axios.get(`http://127.0.0.1:8000/api/${username}/seek`,{
+        axios.get(`/api/${username}/seek`,{
             headers: {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             }
@@ -147,7 +147,7 @@ class Notifications extends Component {
                         <div>
                             {this.state.othersReqs.map(request => (
                                 <div>
-                                    <p value={request} className="req-name" onClick={() => this.showDetails(request.text.split(" ")[0])}>{request.text}</p><p>{Date(request.time)}</p>
+                                    <p value={request} className="req-name" onClick={() => this.showDetails(request.text.split(" ")[0])}>{request.text}</p><p>{request.time.slice(0,10)}</p>
                                 </div>
                             ))}
                         </div>

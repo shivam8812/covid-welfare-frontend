@@ -28,7 +28,7 @@ class MyProfile extends Component {
             this.props.history.push("/GetStarted");
         }
         else{
-        axios.get(`http://127.0.0.1:8000/api/${localStorage.getItem('username')}`,{
+        axios.get(`/api/${localStorage.getItem('username')}`,{
             headers: {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             }

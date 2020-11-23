@@ -24,7 +24,7 @@ class Seek extends Component {
             this.props.history.push("/GetStarted");
         }
         /*else{
-            axios.get(`http://127.0.0.1:8000/api/${localStorage.getItem('username')}/seeklist`,{
+            axios.get(`/api/${localStorage.getItem('username')}/seeklist`,{
             headers: {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             }
@@ -57,7 +57,7 @@ class Seek extends Component {
         }
     }
     requestHelp(e){
-        axios.post(`http://127.0.0.1:8000/api/${localStorage.getItem('username')}/seek/`,{
+        axios.post(`/api/${localStorage.getItem('username')}/seek/`,{
             seek_text: this.state.seektext,
         },{
             headers: {
