@@ -121,7 +121,7 @@ export class Smap extends Component{
             <p className="attribute-para-map"><span className="profile-atrribute-map">Blood Group:  </span><br/>{this.state.userClicked.blood_group}</p>
             <p className="attribute-para-map"><span className="profile-atrribute-map">Address:  </span><br/>{this.state.userClicked.address}</p>
             <p className="attribute-para-map"><span className="profile-atrribute-map">Occupation:  </span><br/>{this.state.userClicked.occupation}</p>
-            <p className="attribute-para-map"><span className="profile-atrribute-map">Distance form you:  </span><br/>{this.state.dist}</p>
+            <p className="attribute-para-map"><span className="profile-atrribute-map">Distance form you:  </span><br/>{this.state.dist} Kms</p>
             <button onClick={this.handleRequestButton}>Request</button><br />
             <button onClick={this.handleCloseButton}>Close</button>
           </div>

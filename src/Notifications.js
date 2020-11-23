@@ -121,41 +121,37 @@ class Notifications extends Component {
                         <Navbar />
                     </div>
                     <div className="notification-center">
+                        <div className="nofis">
+                        <div className="nofis-card">
                         <h4>Your provide requests</h4>
                         <div>
-                            <ul>
                             {this.state.provideReqs.map(request => (
-                                <li>
                                 <div>
                                     <text>You have requested to help</text> <text value={request} className="req-name" onClick={() => this.showDetails(request)}> {request}</text>
                                 </div>  
-                                </li>                          
                             ))}
-                            </ul>
                         </div>
+                        </div>
+                        <div className="nofis-card">
                         <h4>Your seek requests</h4>
                         <div>
-                            <ul>
                             {this.state.seekReqs.map(request => (
-                                <li>
                                 <div>
                                     <p>You have requested to get help from</p> <p value={request} className="req-name" onClick={() => this.showDetails(request)}> {request}</p>
                                 </div>
-                                </li>
                             ))}
-                            </ul>
                         </div>
+                        </div>
+                        <div className="nofis-card">
                         <h4>People who have requested from you</h4>
                         <div>
-                            <ul>
                             {this.state.othersReqs.map(request => (
-                                <li>
                                 <div>
                                     <p value={request} className="req-name" onClick={() => this.showDetails(request.text.split(" ")[0])}>{request.text}</p><p>{request.time}</p>
                                 </div>
-                                </li>
                             ))}
-                            </ul>
+                        </div>
+                        </div>
                         </div>
                     </div>
                     <div className="notification-right">

@@ -46,3 +46,16 @@
     font-weight: 500;
     font-size: 20px;
 }
+.nofis{
+    margin-left: 15px;
+}
+.nofis-card{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: #e4f5f2;
+    box-shadow: 10px 10px 35px #aaf8eb;
+    width: 80%;
+    padding: 0 0 10px 0px;
+    margin-top: 10px;
+}
