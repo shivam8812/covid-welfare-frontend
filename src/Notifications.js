@@ -147,7 +147,7 @@ class Notifications extends Component {
                         <div>
                             {this.state.othersReqs.map(request => (
                                 <div>
-                                    <p value={request} className="req-name" onClick={() => this.showDetails(request.text.split(" ")[0])}>{request.text}</p><p>{request.time}</p>
+                                    <p value={request} className="req-name" onClick={() => this.showDetails(request.text.split(" ")[0])}>{request.text}</p><p>{Date(request.time)}</p>
                                 </div>
                             ))}
                         </div>
