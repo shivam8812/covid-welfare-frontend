@@ -159,14 +159,16 @@ class Notifications extends Component {
                         </div>
                     </div>
                     <div className="notification-right">
-                        <div className="details">
+                        {   (Object.keys(this.state.clickedUser).length > 0)
+                            ?<div className="details">
                             <div className="detail-heading">Username</div><div className="detail-text"> {this.state.clickedUser.username}</div>
                             <div className="detail-heading">Adrress</div><div className="detail-text"> {this.state.clickedUser.address}</div>
                             <div className="detail-heading">Blood group</div><div className="detail-text"> {this.state.clickedUser.blood_group}</div>
                             <div className="detail-heading">Contact number</div><div className="detail-text"> {this.state.clickedUser.contact}</div>
                             <div className="detail-heading">Occupation</div><div className="detail-text"> {this.state.clickedUser.occupation}</div>
                             <div className="detail-heading">Seektext</div><div className="detail-text"> {this.state.seektext}</div>
-                        </div>
+                            </div>
+                            :<div>Click on a notification to see its details</div>}
                     </div>
                 </div>
             </div>
