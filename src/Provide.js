@@ -29,7 +29,7 @@ class Provide extends Component {
             this.props.history.push("/GetStarted");
         }
         else{
-            axios.get(`/api/${localStorage.getItem('username')}`,{
+            axios.get(`https://hidden-reef-87983.herokuapp.com/api/${localStorage.getItem('username')}`,{
             headers: {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             }
@@ -44,7 +44,7 @@ class Provide extends Component {
             .catch(error => {
             console.log(error);
             })
-            axios.get(`/api/${localStorage.getItem('username')}/providelist`,{
+            axios.get(`https://hidden-reef-87983.herokuapp.com/api/${localStorage.getItem('username')}/providelist`,{
             headers: {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             }
@@ -72,7 +72,7 @@ class Provide extends Component {
         this.setState({
           dist:dist,
         })
-        axios.get(`/api/${username}/`,{
+        axios.get(`https://hidden-reef-87983.herokuapp.com/api/${username}/`,{
                 headers: {
                     'Authorization': `Token ${localStorage.getItem('token')}`
                 }
@@ -88,7 +88,7 @@ class Provide extends Component {
           .catch(error => {
               console.log(error);
           })
-          axios.get(`/api/${username}/seek/`,{
+          axios.get(`https://hidden-reef-87983.herokuapp.com/api/${username}/seek/`,{
                 headers: {
                     'Authorization': `Token ${localStorage.getItem('token')}`
                 }
@@ -107,7 +107,7 @@ class Provide extends Component {
           document.getElementsByClassName('invisible')[0].style.zIndex = "1";
       }
       handleRequestButton = ()=>{
-        axios.post(`/notification/providereq/`,
+        axios.post(`https://hidden-reef-87983.herokuapp.com/notification/providereq/`,
                 {
                   user: this.state.userClicked.username,
                 },
@@ -124,7 +124,7 @@ class Provide extends Component {
             console.log(error);
         }
         )
-        axios.get(`/notification/providereq/`,
+        axios.get(`https://hidden-reef-87983.herokuapp.com/notification/providereq/`,
                 {
                   headers: {
                     'Authorization': `Token ${localStorage.getItem('token')}`
@@ -138,7 +138,7 @@ class Provide extends Component {
             console.log(error);
         }
         )
-        axios.get(`/notification/seekreq/`,
+        axios.get(`https://hidden-reef-87983.herokuapp.com/notification/seekreq/`,
                 {
                   headers: {
                     'Authorization': `Token ${localStorage.getItem('token')}`
@@ -155,7 +155,7 @@ class Provide extends Component {
         document.getElementsByClassName('invisible')[0].style.zIndex = "-1";
       }
     toggleProvide(e){
-        axios.post(`/api/${localStorage.getItem('username')}/`,{
+        axios.post(`https://hidden-reef-87983.herokuapp.com/api/${localStorage.getItem('username')}/`,{
             contact:  this.state.User.contact,
             occupation: this.state.User.occupation,
             address: this.state.User.address,

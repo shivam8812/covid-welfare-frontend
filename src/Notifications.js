@@ -28,7 +28,7 @@ class Notifications extends Component {
         this.getothersReqs();
     }
     getProvideReqs(){
-        axios.get(`/notification/providereq/`,
+        axios.get(`https://hidden-reef-87983.herokuapp.com/notification/providereq/`,
                 {
                   headers: {
                     'Authorization': `Token ${localStorage.getItem('token')}`
@@ -47,7 +47,7 @@ class Notifications extends Component {
         )
     }
     getSeekReqs(){
-        axios.get(`/notification/seekreq/`,
+        axios.get(`https://hidden-reef-87983.herokuapp.com/notification/seekreq/`,
                 {
                   headers: {
                     'Authorization': `Token ${localStorage.getItem('token')}`
@@ -66,7 +66,7 @@ class Notifications extends Component {
         )
     }
     getothersReqs(){
-        axios.get(`/notification/`,
+        axios.get(`https://hidden-reef-87983.herokuapp.com/notification/`,
                 {
                   headers: {
                     'Authorization': `Token ${localStorage.getItem('token')}`
@@ -85,7 +85,7 @@ class Notifications extends Component {
         )
     }
     showDetails(username){
-        axios.get(`/api/${username}`,{
+        axios.get(`https://hidden-reef-87983.herokuapp.com/api/${username}`,{
             headers: {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             }
@@ -99,7 +99,7 @@ class Notifications extends Component {
         .catch(error => {
             console.log(error);
         })
-        axios.get(`/api/${username}/seek`,{
+        axios.get(`https://hidden-reef-87983.herokuapp.com/api/${username}/seek`,{
             headers: {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             }

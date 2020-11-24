@@ -83,7 +83,7 @@ class GetStarted extends Component {
         console.log(this.state.User);
         if(this.state.User.userName!="" && this.state.User.emailId!="" && this.state.User.password!="" && this.state.User.password2!=""){
             if(this.state.User.password===this.state.User.password2){
-                axios.post('/api/user/register/',{
+                axios.post('https://hidden-reef-87983.herokuapp.com/api/user/register/',{
                 username: this.state.User.userName,
                 email: this.state.User.emailId,
                 password: this.state.User.password,
@@ -109,7 +109,7 @@ class GetStarted extends Component {
         
     }
     handleLogin(){
-        axios.post('/api/user/login/',{
+        axios.post('https://hidden-reef-87983.herokuapp.com/api/user/login/',{
             username: this.state.Username,
             password: this.state.pass
         })

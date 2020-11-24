@@ -57,7 +57,7 @@ class Seek extends Component {
         }
     }
     requestHelp(e){
-        axios.post(`/api/${localStorage.getItem('username')}/seek/`,{
+        axios.post(`https://hidden-reef-87983.herokuapp.com/api/${localStorage.getItem('username')}/seek/`,{
             seek_text: this.state.seektext,
         },{
             headers: {

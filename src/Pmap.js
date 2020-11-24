@@ -18,7 +18,7 @@ export class Pmap extends Component{
         this.showMyLocation();
   }
   showMyLocation(){
-    axios.get(`/api/${localStorage.getItem('username')}/`,{
+    axios.get(`https://hidden-reef-87983.herokuapp.com/api/${localStorage.getItem('username')}/`,{
             headers: {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             }
@@ -37,7 +37,7 @@ export class Pmap extends Component{
         })
   }
   showSeekers(){
-    axios.get(`/api/${localStorage.getItem('username')}/${this.props.type}list`,{
+    axios.get(`https://hidden-reef-87983.herokuapp.com/api/${localStorage.getItem('username')}/${this.props.type}list`,{
             headers: {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             }

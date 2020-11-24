@@ -18,7 +18,7 @@ export class Smap extends Component{
         this.showMyLocation();
   }
   async showMyLocation(){
-    axios.get(`/api/${localStorage.getItem('username')}/`,{
+    axios.get(`https://hidden-reef-87983.herokuapp.com/api/${localStorage.getItem('username')}/`,{
       headers: {
           'Authorization': `Token ${localStorage.getItem('token')}`
       }
@@ -38,7 +38,7 @@ export class Smap extends Component{
   }
   async showProviders(){
     console.log("showProviders");
-    axios.get(`/api/${localStorage.getItem('username')}/seeklist`,{
+    axios.get(`https://hidden-reef-87983.herokuapp.com/api/${localStorage.getItem('username')}/seeklist`,{
             headers: {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             }
@@ -60,7 +60,7 @@ export class Smap extends Component{
     this.setState({
       dist:dist,
     })
-    axios.get(`/api/${username}/`,{
+    axios.get(`https://hidden-reef-87983.herokuapp.com/api/${username}/`,{
             headers: {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             }

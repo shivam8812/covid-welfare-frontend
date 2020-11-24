@@ -30,7 +30,7 @@ class EditProfile extends Component {
     }
     componentDidMount(){
         this.getCoords();
-        axios.get(`/api/${localStorage.getItem('username')}`,{
+        axios.get(`https://hidden-reef-87983.herokuapp.com/api/${localStorage.getItem('username')}`,{
             headers: {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             }
@@ -93,7 +93,7 @@ class EditProfile extends Component {
         })
     }
     handleSubmit(){
-        axios.post(`/api/${localStorage.getItem('username')}/`,{
+        axios.post(`https://hidden-reef-87983.herokuapp.com/api/${localStorage.getItem('username')}/`,{
             contact:  (this.state.contactnum!="") ? this.state.contactnum : this.state.User.contact,
             occupation: (this.state.occupation!="") ? this.state.occupation :this.state.User.occupation,
             address: (this.state.address!="") ? this.state.address : this.state.User.address,
