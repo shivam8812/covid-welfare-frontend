@@ -41,5 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://0.0.0.0:8000"
+  "proxy": "https://hidden-reef-87983.herokuapp.com/"
 }
