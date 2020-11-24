@@ -30,7 +30,7 @@ class App extends Component {
     return ( 
       <div>
         <UserProvider value={this.state}>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <Switch>
             <Route exact path="/">
               <IntroPage />
