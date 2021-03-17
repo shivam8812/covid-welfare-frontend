@@ -18,7 +18,7 @@ export class Pmap extends Component{
         this.showMyLocation();
   }
   showMyLocation(){
-    axios.get(`/api/${localStorage.getItem('username')}/`,{
+    axios.get(`http://127.0.0.1:8000/api/${localStorage.getItem('username')}/`,{
             headers: {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             }
@@ -37,11 +37,11 @@ export class Pmap extends Component{
         })
   }
   showSeekers(){
-    axios.get(`/api/${localStorage.getItem('username')}/${this.props.type}list`,{
+    axios.get(`http://127.0.0.1:8000/api/${localStorage.getItem('username')}/${this.props.type}list`,{
             headers: {
                 'Authorization': `Token ${localStorage.getItem('token')}`
             }
-        })
+        })      
         .then(response => {
             this.setState({
                 Users:response.data.data,
@@ -75,7 +75,7 @@ export class Pmap extends Component{
             <p className="attribute-para-map"><span className="profile-atrribute-map">In need of:  </span><br/>{this.props.seektext}</p>
 
             <button onClick={this.props.handleRequestButton}>Request</button><br />
-            <button className="closebutton" onClick={this.props.handleCloseButton}>Close</button>
+            <button onClick={this.props.handleCloseButton}>Close</button>
           </div>
         </h1>
         <Map google={this.props.google}
@@ -90,6 +90,7 @@ export class Pmap extends Component{
         onClick={this.onMapClicked}className="Pmap-map" >
           <Marker
               title={localStorage.getItem('username')}
+              name={'SOMA'}
               position={{lat:lat1,
                 lng: lon1}} 
                 icon={{
